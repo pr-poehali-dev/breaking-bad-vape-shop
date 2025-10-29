@@ -89,7 +89,7 @@ const Catalog = () => {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <header className="bg-card border-b border-border sticky top-0 z-40">
+      <header className="bg-card border-b border-border sticky top-0 z-40 backdrop-blur-sm bg-card/95">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -116,7 +116,7 @@ const Catalog = () => {
               variant={selectedCategory === cat.id ? 'default' : 'outline'}
               size="sm"
               onClick={() => setSelectedCategory(cat.id)}
-              className={`whitespace-nowrap font-bold ${
+              className={`whitespace-nowrap font-bold transition-transform hover:scale-105 ${
                 selectedCategory === cat.id
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-card text-foreground border-border'
@@ -131,7 +131,8 @@ const Catalog = () => {
           {filteredProducts.map((product) => (
             <Card
               key={product.id}
-              className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300"
+              className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer animate-scale-in"
+              style={{ animationDelay: `${product.id * 0.05}s` }}
             >
               <div className="relative">
                 {product.badge && (
@@ -146,8 +147,8 @@ const Catalog = () => {
                     </Badge>
                   </div>
                 )}
-                <div className="aspect-square bg-secondary/50 flex items-center justify-center border-b border-border">
-                  <Icon name="Cigarette" size={48} className="text-muted-foreground" />
+                <div className="aspect-square bg-secondary/50 flex items-center justify-center border-b border-border transition-all group-hover:bg-secondary/70">
+                  <Icon name="Cigarette" size={48} className="text-muted-foreground transition-transform group-hover:scale-110" />
                 </div>
               </div>
               <div className="p-3">

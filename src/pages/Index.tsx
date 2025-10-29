@@ -6,53 +6,38 @@ import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
-  const featuredProducts = [
-    {
-      id: 1,
-      name: 'Heisenberg Blue',
-      price: '3 490 ₽',
-      category: 'Pod-система',
-      image: '/placeholder.svg',
-      badge: 'ХИТ'
-    },
-    {
-      id: 2,
-      name: 'Los Pollos Hermanos',
-      price: '2 990 ₽',
-      category: 'Жидкость',
-      image: '/placeholder.svg',
-      badge: 'NEW'
-    },
-    {
-      id: 3,
-      name: 'Better Call Vape',
-      price: '4 990 ₽',
-      category: 'Мод',
-      image: '/placeholder.svg',
-      badge: 'ТОП'
-    },
-    {
-      id: 4,
-      name: 'Crystal Ship',
-      price: '1 990 ₽',
-      category: 'Жидкость',
-      image: '/placeholder.svg',
-      badge: null
-    }
+  const categories = [
+    { icon: 'Cigarette', name: 'POD-системы' },
+    { icon: 'Droplet', name: 'Жидкости' },
+    { icon: 'Wind', name: 'Кальяны' },
+    { icon: 'Sparkles', name: 'Аксессуары' }
+  ];
+
+  const benefits = [
+    { icon: 'Star', title: 'Только оригинальная продукция', description: 'Гарантия подлинности каждого товара' },
+    { icon: 'Rocket', title: 'Новинки первыми', description: 'Эксклюзивные поступления' },
+    { icon: 'ShieldCheck', title: 'Гарантия качества', description: 'Проверено и сертифицировано' },
+    { icon: 'Users', title: 'Дружелюбный сервис', description: 'Консультация экспертов' }
+  ];
+
+  const blogPosts = [
+    { title: 'Как выбрать свой первый вейп', category: 'Для новичков', time: '5 мин' },
+    { title: 'Топ-10 жидкостей 2024 года', category: 'Обзоры', time: '7 мин' },
+    { title: 'Уход за POD-системой', category: 'Гайды', time: '4 мин' }
   ];
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <header className="bg-card border-b border-border sticky top-0 z-40">
+      <header className="bg-card border-b border-border sticky top-0 z-40 backdrop-blur-sm bg-card/95">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <Logo size="md" />
               <div>
                 <h1 className="text-2xl font-bold text-primary tracking-wide">HEISENBERG</h1>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest">Premium Quality</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">Калининград</p>
               </div>
-            </div>
+            </Link>
             <Button variant="ghost" size="icon" className="relative">
               <Icon name="ShoppingCart" size={20} />
               <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
@@ -64,72 +49,111 @@ const Index = () => {
       </header>
 
       <main className="max-w-screen-sm mx-auto px-4 py-6">
-        <section className="mb-8">
-          <div className="relative bg-gradient-to-br from-secondary via-card to-secondary rounded-lg overflow-hidden p-6 border border-primary/20">
+        <section className="mb-10 animate-fade-in">
+          <div className="relative bg-gradient-to-br from-secondary via-card to-secondary rounded-lg overflow-hidden p-6 border border-primary/30 shadow-lg">
             <div className="relative z-10">
-              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider">
-                99.1% ЧИСТОТА
+              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider animate-pulse-slow">
+                99.1% КАЧЕСТВО
               </div>
-              <h2 className="text-3xl font-bold mb-2 text-foreground">
-                ЛУЧШИЙ ВЫБОР
+              <h2 className="text-3xl font-bold mb-3 text-foreground leading-tight">
+                HEISENBERG — ТЕРРИТОРИЯ НАСТОЯЩЕГО ВКУСА
               </h2>
-              <p className="text-sm text-muted-foreground mb-4 max-w-xs">
-                Премиальные вейпы и жидкости. Проверенное качество.
+              <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+                Официальная сеть вейпшопов в Калининграде. Широкий выбор устройств, жидкостей и аксессуаров для тех, кто ценит качество.
               </p>
-              <Link to="/catalog">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
-                  СМОТРЕТЬ КАТАЛОГ
-                  <Icon name="ArrowRight" size={16} className="ml-2" />
-                </Button>
-              </Link>
+              <div className="flex gap-3">
+                <Link to="/catalog" className="flex-1">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-transform hover:scale-105">
+                    Смотреть каталог
+                    <Icon name="ArrowRight" size={16} className="ml-2" />
+                  </Button>
+                </Link>
+                <Link to="/contacts" className="flex-1">
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+                    Наши магазины
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="absolute top-0 right-0 text-9xl font-bold text-primary/5 select-none">
+            <div className="absolute top-0 right-0 text-9xl font-bold text-primary/5 select-none animate-float">
               CH₃
             </div>
-            <div className="absolute bottom-4 left-4 text-5xl font-bold text-primary/5 select-none">
+            <div className="absolute bottom-4 left-4 text-5xl font-bold text-primary/5 select-none animate-pulse-slow">
               C₁₀H₁₅N
             </div>
-            <div className="absolute top-1/2 right-8 text-6xl font-bold text-primary/5 select-none rotate-12">
+            <div className="absolute top-1/2 right-8 text-6xl font-bold text-primary/5 select-none rotate-12 animate-float" style={{ animationDelay: '1s' }}>
               Br
             </div>
           </div>
         </section>
 
-        <section className="mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold">Популярное</h3>
-            <Link to="/catalog" className="text-sm text-primary hover:underline font-medium">
-              Все товары →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {featuredProducts.map((product) => (
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <h2 className="text-2xl font-bold mb-4 text-foreground">Широкий ассортимент</h2>
+          <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+            От POD-систем и кальянов до премиальных жидкостей и аксессуаров — всё в одном месте. Только проверенные бренды и новинки.
+          </p>
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            {categories.map((cat, idx) => (
               <Card
-                key={product.id}
-                className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-[1.02]"
+                key={idx}
+                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer animate-scale-in"
+                style={{ animationDelay: `${0.1 + idx * 0.1}s` }}
               >
-                <div className="relative">
-                  {product.badge && (
-                    <div className="absolute top-2 left-2 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold z-10">
-                      {product.badge}
-                    </div>
-                  )}
-                  <div className="aspect-square bg-secondary/50 flex items-center justify-center border-b border-border">
-                    <Icon name="Cigarette" size={48} className="text-muted-foreground" />
-                  </div>
+                <div className="bg-primary/10 p-3 rounded w-fit mb-3 transition-transform hover:rotate-6">
+                  <Icon name={cat.icon as any} size={24} className="text-primary" />
                 </div>
-                <div className="p-3">
-                  <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
-                    {product.category}
-                  </p>
-                  <h4 className="font-bold text-sm mb-2 text-foreground line-clamp-1">
-                    {product.name}
-                  </h4>
-                  <div className="flex items-center justify-between">
-                    <span className="text-primary font-bold">{product.price}</span>
-                    <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 h-8 px-3">
-                      <Icon name="Plus" size={14} />
-                    </Button>
+                <h3 className="font-bold text-sm text-foreground">{cat.name}</h3>
+              </Card>
+            ))}
+          </div>
+          <Link to="/catalog">
+            <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+              Смотреть весь каталог
+              <Icon name="ExternalLink" size={16} className="ml-2" />
+            </Button>
+          </Link>
+        </section>
+
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h2 className="text-2xl font-bold mb-4 text-foreground">Наши магазины рядом с вами</h2>
+          <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+            Мы уже в десятках районов города. Найдите ближайший HEISENBERG на интерактивной карте и заходите за новыми вкусами.
+          </p>
+          <Link to="/contacts">
+            <Card className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg group cursor-pointer">
+              <div className="relative bg-secondary/30 h-48 flex items-center justify-center border-b border-border overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Icon name="MapPin" size={64} className="text-primary transition-transform group-hover:scale-110 group-hover:animate-float" />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-foreground">Посмотреть на карте</span>
+                  <Icon name="ArrowRight" size={20} className="text-primary transition-transform group-hover:translate-x-2" />
+                </div>
+              </div>
+            </Card>
+          </Link>
+        </section>
+
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <h2 className="text-2xl font-bold mb-4 text-foreground">Почему HEISENBERG</h2>
+          <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+            Мы объединяем опыт, качество и сервис. Покупая у нас, вы получаете не только товар, но и уверенность в его оригинальности.
+          </p>
+          <div className="grid grid-cols-1 gap-3">
+            {benefits.map((benefit, idx) => (
+              <Card
+                key={idx}
+                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-scale-in group"
+                style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary/10 p-3 rounded transition-transform group-hover:scale-110 group-hover:rotate-6">
+                    <Icon name={benefit.icon as any} size={24} className="text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold mb-1 text-foreground">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               </Card>
@@ -137,20 +161,84 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="mb-6">
-          <Card className="bg-card border-border p-4">
-            <div className="flex items-start gap-3">
-              <div className="bg-primary/10 p-3 rounded">
-                <Icon name="ShieldCheck" size={24} className="text-primary" />
-              </div>
-              <div>
-                <h4 className="font-bold mb-1 text-foreground">Гарантия качества</h4>
-                <p className="text-sm text-muted-foreground">
-                  Все товары сертифицированы и проверены
-                </p>
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="relative bg-gradient-to-br from-primary/20 via-card to-secondary rounded-lg overflow-hidden p-6 border border-primary/30 shadow-lg">
+            <div className="relative z-10">
+              <Icon name="Briefcase" size={40} className="text-primary mb-3" />
+              <h2 className="text-2xl font-bold mb-3 text-foreground">Работа в HEISENBERG</h2>
+              <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+                Мы всегда ищем энергичных и целеустремлённых ребят. Гибкий график, официальное оформление и карьерный рост.
+              </p>
+              <Link to="/careers">
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-transform hover:scale-105">
+                  Заполнить анкету
+                  <Icon name="Send" size={16} className="ml-2" />
+                </Button>
+              </Link>
+            </div>
+            <div className="absolute bottom-2 right-4 text-7xl font-bold text-primary/5 select-none animate-pulse-slow">
+              H
+            </div>
+            <div className="absolute top-2 left-20 text-5xl font-bold text-primary/5 select-none animate-float">
+              N
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <h2 className="text-2xl font-bold mb-4 text-foreground">Блог HEISENBERG</h2>
+          <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+            Полезные статьи о вейпах, новинках и культуре. Советы для новичков и гайды для опытных.
+          </p>
+          <div className="space-y-3 mb-5">
+            {blogPosts.map((post, idx) => (
+              <Card
+                key={idx}
+                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer group animate-scale-in"
+                style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded font-medium">{post.category}</span>
+                      <span className="text-xs text-muted-foreground">{post.time}</span>
+                    </div>
+                    <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{post.title}</h3>
+                  </div>
+                  <Icon name="ArrowRight" size={20} className="text-primary transition-transform group-hover:translate-x-2" />
+                </div>
+              </Card>
+            ))}
+          </div>
+          <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+            Читать все статьи
+            <Icon name="BookOpen" size={16} className="ml-2" />
+          </Button>
+        </section>
+
+        <section className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="relative bg-gradient-to-br from-secondary via-card to-secondary rounded-lg overflow-hidden p-6 border border-primary/20 text-center">
+            <div className="relative z-10">
+              <h2 className="text-xl font-bold mb-3 text-foreground">Оставайтесь на связи</h2>
+              <p className="text-sm text-muted-foreground mb-5">
+                Подписывайтесь на наши соцсети, чтобы быть в курсе акций и новых поступлений.
+              </p>
+              <div className="flex gap-3 justify-center">
+                <a href="#" className="bg-primary/10 p-3 rounded-lg hover:bg-primary/20 transition-all hover:scale-110">
+                  <Icon name="Instagram" size={24} className="text-primary" />
+                </a>
+                <a href="#" className="bg-primary/10 p-3 rounded-lg hover:bg-primary/20 transition-all hover:scale-110">
+                  <Icon name="MessageCircle" size={24} className="text-primary" />
+                </a>
+                <a href="tel:+79991234567" className="bg-primary/10 p-3 rounded-lg hover:bg-primary/20 transition-all hover:scale-110">
+                  <Icon name="Phone" size={24} className="text-primary" />
+                </a>
               </div>
             </div>
-          </Card>
+            <div className="absolute top-2 right-4 text-6xl font-bold text-primary/5 select-none animate-float">
+              Br
+            </div>
+          </div>
         </section>
       </main>
 

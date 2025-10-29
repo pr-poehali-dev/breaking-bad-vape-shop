@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Logo from '@/components/Logo';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -56,12 +57,17 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <header className="bg-card border-b border-border sticky top-0 z-40">
+      <header className="bg-card border-b border-border sticky top-0 z-40 backdrop-blur-sm bg-card/95">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-primary tracking-wide">КАРЬЕРА</h1>
-          <p className="text-xs text-muted-foreground uppercase tracking-widest">
-            Присоединяйся к команде
-          </p>
+          <div className="flex items-center gap-3">
+            <Logo size="sm" />
+            <div>
+              <h1 className="text-xl font-bold text-primary tracking-wide">КАРЬЕРА</h1>
+              <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                Присоединяйся к команде
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
