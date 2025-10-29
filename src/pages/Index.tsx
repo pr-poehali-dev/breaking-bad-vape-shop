@@ -34,7 +34,7 @@ const Index = () => {
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <Logo size="md" />
               <div>
-                <h1 className="text-2xl font-bold text-primary tracking-wide">HEISENBERG</h1>
+                <h1 className="text-2xl font-bold text-primary tracking-wide animate-neon-pulse" style={{textShadow: '0 0 10px hsl(54 100% 62%), 0 0 20px hsl(54 100% 62%)'}}>HEISENBERG</h1>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Калининград</p>
               </div>
             </Link>
@@ -60,10 +60,10 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent"></div>
             </div>
             <div className="relative z-10 p-6">
-              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider animate-pulse-slow">
+              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider animate-neon-glow" style={{boxShadow: '0 0 15px hsl(54 100% 62%), 0 0 25px hsl(54 100% 62%)'}}>
                 99.1% КАЧЕСТВО
               </div>
-              <h2 className="text-3xl font-bold mb-3 text-foreground leading-tight">
+              <h2 className="text-3xl font-bold mb-3 text-primary leading-tight animate-neon-pulse" style={{textShadow: '0 0 8px hsl(54 100% 62%), 0 0 15px hsl(54 100% 62%)'}}>
                 HEISENBERG — ТЕРРИТОРИЯ НАСТОЯЩЕГО ВКУСА
               </h2>
               <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
@@ -71,13 +71,13 @@ const Index = () => {
               </p>
               <div className="flex gap-3">
                 <Link to="/catalog" className="flex-1">
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-transform hover:scale-105">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-transform hover:scale-105 animate-neon-glow" style={{boxShadow: '0 0 10px hsl(54 100% 62%), 0 0 20px hsl(54 100% 62%)'}}>
                     Смотреть каталог
                     <Icon name="ArrowRight" size={16} className="ml-2" />
                   </Button>
                 </Link>
                 <Link to="/contacts" className="flex-1">
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105" style={{borderColor: 'hsl(54 100% 62%)', boxShadow: '0 0 5px hsl(54 100% 62% / 0.3)'}}>
                     Наши магазины
                   </Button>
                 </Link>
