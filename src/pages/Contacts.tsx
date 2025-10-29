@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Logo from '@/components/Logo';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -7,21 +8,21 @@ const Contacts = () => {
   const stores = [
     {
       id: 1,
-      name: 'HEISENVAPE Центр',
+      name: 'HEISENBERG Центр',
       address: 'ул. Ленина, 42',
       phone: '+7 (999) 123-45-67',
       hours: '10:00 - 22:00'
     },
     {
       id: 2,
-      name: 'HEISENVAPE Север',
+      name: 'HEISENBERG Север',
       address: 'пр. Мира, 15',
       phone: '+7 (999) 123-45-68',
       hours: '10:00 - 22:00'
     },
     {
       id: 3,
-      name: 'HEISENVAPE Запад',
+      name: 'HEISENBERG Запад',
       address: 'ул. Победы, 88',
       phone: '+7 (999) 123-45-69',
       hours: '10:00 - 21:00'
@@ -29,7 +30,7 @@ const Contacts = () => {
   ];
 
   const socialLinks = [
-    { icon: 'Instagram', label: '@heisenvape', link: '#' },
+    { icon: 'Instagram', label: '@heisenberg_vape', link: '#' },
     { icon: 'MessageCircle', label: 'Telegram', link: '#' },
     { icon: 'Phone', label: '+7 (999) 123-45-67', link: 'tel:+79991234567' }
   ];
@@ -38,10 +39,15 @@ const Contacts = () => {
     <div className="min-h-screen pb-20 bg-background">
       <header className="bg-card border-b border-border sticky top-0 z-40">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-primary tracking-wide">КОНТАКТЫ</h1>
-          <p className="text-xs text-muted-foreground uppercase tracking-widest">
-            Наши магазины
-          </p>
+          <div className="flex items-center gap-3">
+            <Logo size="sm" />
+            <div>
+              <h1 className="text-xl font-bold text-primary tracking-wide">КОНТАКТЫ</h1>
+              <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                Наши магазины
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -112,17 +118,25 @@ const Contacts = () => {
         </section>
 
         <section>
-          <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 p-6">
-            <div className="text-center">
+          <Card className="relative bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 p-6 overflow-hidden">
+            <div className="relative z-10 text-center">
               <Icon name="Briefcase" size={40} className="text-primary mx-auto mb-3" />
               <h3 className="font-bold text-foreground mb-2">Работа у нас</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Мы всегда ищем талантливых людей в нашу команду
               </p>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
-                Вакансии
-                <Icon name="ArrowRight" size={14} className="ml-2" />
-              </Button>
+              <a href="/careers">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold">
+                  Вакансии
+                  <Icon name="ArrowRight" size={14} className="ml-2" />
+                </Button>
+              </a>
+            </div>
+            <div className="absolute bottom-2 right-4 text-7xl font-bold text-primary/5 select-none">
+              H
+            </div>
+            <div className="absolute top-2 left-4 text-5xl font-bold text-primary/5 select-none">
+              N
             </div>
           </Card>
         </section>

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Logo from '@/components/Logo';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -46,9 +46,12 @@ const Index = () => {
       <header className="bg-card border-b border-border sticky top-0 z-40">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-primary tracking-wide">HEISENVAPE</h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest">Premium Quality</p>
+            <div className="flex items-center gap-3">
+              <Logo size="md" />
+              <div>
+                <h1 className="text-2xl font-bold text-primary tracking-wide">HEISENBERG</h1>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">Premium Quality</p>
+              </div>
             </div>
             <Button variant="ghost" size="icon" className="relative">
               <Icon name="ShoppingCart" size={20} />
@@ -82,6 +85,12 @@ const Index = () => {
             </div>
             <div className="absolute top-0 right-0 text-9xl font-bold text-primary/5 select-none">
               CH₃
+            </div>
+            <div className="absolute bottom-4 left-4 text-5xl font-bold text-primary/5 select-none">
+              C₁₀H₁₅N
+            </div>
+            <div className="absolute top-1/2 right-8 text-6xl font-bold text-primary/5 select-none rotate-12">
+              Br
             </div>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Logo from '@/components/Logo';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -91,11 +92,14 @@ const Catalog = () => {
       <header className="bg-card border-b border-border sticky top-0 z-40">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-primary tracking-wide">КАТАЛОГ</h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest">
-                {filteredProducts.length} товаров
-              </p>
+            <div className="flex items-center gap-3">
+              <Logo size="sm" />
+              <div>
+                <h1 className="text-xl font-bold text-primary tracking-wide">КАТАЛОГ</h1>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                  {filteredProducts.length} товаров
+                </p>
+              </div>
             </div>
             <Button variant="ghost" size="icon">
               <Icon name="Search" size={20} />
