@@ -75,4 +75,27 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
+
+  .group:hover h1 {
+    --neon-shadow:
+      0 0 6px hsl(54 100% 62% / 0.4), 0 0 12px hsl(54 100% 62% / 0.2);
+  }
+
+  .group:hover {
+    --card-shadow:
+      0 0 8px hsl(54 100% 62% / 0.15), 0 0 15px hsl(54 100% 62% / 0.08);
+    --icon-shadow: 0 0 8px hsl(54 100% 62% / 0.3);
+  }
+
+  button:hover {
+    box-shadow:
+      0 0 12px hsl(54 100% 62% / 0.25),
+      0 0 20px hsl(54 100% 62% / 0.12) !important;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 0 10px hsl(54 100% 62% / 0.15),
+      0 0 18px hsl(54 100% 62% / 0.08) !important;
+  }
 }

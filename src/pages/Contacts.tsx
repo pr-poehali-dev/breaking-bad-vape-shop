@@ -69,7 +69,7 @@ const Contacts = () => {
           <h2 className="text-lg font-bold mb-4">Наши магазины</h2>
           <div className="space-y-3">
             {stores.map((store) => (
-              <Card key={store.id} className="bg-card border-border p-4">
+              <Card key={store.id} className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 group card">
                 <h3 className="font-bold text-foreground mb-3">{store.name}</h3>
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
@@ -106,7 +106,7 @@ const Contacts = () => {
               <a
                 key={index}
                 href={social.link}
-                className="flex items-center gap-4 bg-card border border-border p-4 rounded-lg hover:border-primary/50 transition-colors"
+                className="flex items-center gap-4 bg-card border border-border p-4 rounded-lg hover:border-primary/50 transition-all duration-300 group card"
               >
                 <div className="bg-primary/10 p-3 rounded">
                   <Icon name={social.icon as any} size={20} className="text-primary" />

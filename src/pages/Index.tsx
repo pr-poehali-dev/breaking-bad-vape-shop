@@ -31,10 +31,10 @@ const Index = () => {
       <header className="bg-card border-b border-border sticky top-0 z-40 backdrop-blur-sm bg-card/95">
         <div className="max-w-screen-sm mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Link to="/" className="flex items-center gap-3 group transition-opacity">
               <Logo size="md" />
               <div>
-                <h1 className="text-2xl font-bold text-primary tracking-wide animate-neon-pulse" style={{textShadow: '0 0 10px hsl(54 100% 62%), 0 0 20px hsl(54 100% 62%)'}}>HEISENBERG</h1>
+                <h1 className="text-2xl font-bold text-primary tracking-wide transition-all duration-300" style={{textShadow: 'var(--neon-shadow, 0 0 0px transparent)'}}>HEISENBERG</h1>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Калининград</p>
               </div>
             </Link>
@@ -60,10 +60,10 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent"></div>
             </div>
             <div className="relative z-10 p-6">
-              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider animate-neon-glow" style={{boxShadow: '0 0 15px hsl(54 100% 62%), 0 0 25px hsl(54 100% 62%)'}}>
+              <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider">
                 99.1% КАЧЕСТВО
               </div>
-              <h2 className="text-3xl font-bold mb-3 text-primary leading-tight animate-neon-pulse" style={{textShadow: '0 0 8px hsl(54 100% 62%), 0 0 15px hsl(54 100% 62%)'}}>
+              <h2 className="text-3xl font-bold mb-3 text-primary leading-tight">
                 HEISENBERG — ТЕРРИТОРИЯ НАСТОЯЩЕГО ВКУСА
               </h2>
               <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
@@ -71,13 +71,13 @@ const Index = () => {
               </p>
               <div className="flex gap-3">
                 <Link to="/catalog" className="flex-1">
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-transform hover:scale-105 animate-neon-glow" style={{boxShadow: '0 0 10px hsl(54 100% 62%), 0 0 20px hsl(54 100% 62%)'}}>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold transition-all duration-300 hover:scale-105" style={{'--tw-shadow': '0 0 0px transparent'} as any}>
                     Смотреть каталог
                     <Icon name="ArrowRight" size={16} className="ml-2" />
                   </Button>
                 </Link>
                 <Link to="/contacts" className="flex-1">
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105" style={{borderColor: 'hsl(54 100% 62%)', boxShadow: '0 0 5px hsl(54 100% 62% / 0.3)'}}>
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-all duration-300 hover:scale-105">
                     Наши магазины
                   </Button>
                 </Link>
@@ -146,10 +146,10 @@ const Index = () => {
             {categories.map((cat, idx) => (
               <Card
                 key={idx}
-                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer animate-scale-in"
-                style={{ animationDelay: `${0.1 + idx * 0.1}s` }}
+                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer animate-scale-in group"
+                style={{ animationDelay: `${0.1 + idx * 0.1}s`, boxShadow: 'var(--card-shadow, 0 0 0px transparent)' } as any}
               >
-                <div className="bg-primary/10 p-3 rounded w-fit mb-3 transition-transform hover:rotate-6">
+                <div className="bg-primary/10 p-3 rounded w-fit mb-3 transition-all duration-300 group-hover:rotate-6" style={{boxShadow: 'var(--icon-shadow, 0 0 0px transparent)'} as any}>
                   <Icon name={cat.icon as any} size={24} className="text-primary" />
                 </div>
                 <h3 className="font-bold text-sm text-foreground">{cat.name}</h3>
@@ -157,7 +157,7 @@ const Index = () => {
             ))}
           </div>
           <Link to="/catalog">
-            <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+            <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-all duration-300 hover:scale-105">
               Смотреть весь каталог
               <Icon name="ExternalLink" size={16} className="ml-2" />
             </Button>

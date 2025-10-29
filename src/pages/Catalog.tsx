@@ -131,7 +131,7 @@ const Catalog = () => {
           {filteredProducts.map((product) => (
             <Card
               key={product.id}
-              className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer animate-scale-in"
+              className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 group cursor-pointer animate-scale-in card"
               style={{ animationDelay: `${product.id * 0.05}s` }}
             >
               <div className="relative">

@@ -20,9 +20,12 @@ const Navigation = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`flex flex-col items-center gap-1 transition-colors ${
+              className={`flex flex-col items-center gap-1 transition-all duration-300 hover:scale-110 ${
                 isActive ? 'text-primary' : 'text-muted-foreground'
               }`}
+              style={{
+                filter: isActive ? 'drop-shadow(0 0 6px hsl(54 100% 62% / 0.3))' : 'none'
+              }}
             >
               <Icon name={item.icon as any} size={20} />
               <span className="text-xs font-medium">{item.label}</span>
