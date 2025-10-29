@@ -50,8 +50,16 @@ const Index = () => {
 
       <main className="max-w-screen-sm mx-auto px-4 py-6">
         <section className="mb-10 animate-fade-in">
-          <div className="relative bg-gradient-to-br from-secondary via-card to-secondary rounded-lg overflow-hidden p-6 border border-primary/30 shadow-lg">
-            <div className="relative z-10">
+          <div className="relative bg-gradient-to-br from-secondary via-card to-secondary rounded-lg overflow-hidden border border-primary/30 shadow-lg">
+            <div className="absolute inset-0 opacity-20">
+              <img 
+                src="https://cdn.poehali.dev/projects/c2376571-b511-441f-971f-1de993cc46c9/files/240614a6-6bbb-4f7f-a004-30d13a527c5f.jpg" 
+                alt="Heisenberg" 
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-transparent"></div>
+            </div>
+            <div className="relative z-10 p-6">
               <div className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded text-xs font-bold mb-3 uppercase tracking-wider animate-pulse-slow">
                 99.1% КАЧЕСТВО
               </div>
@@ -88,6 +96,48 @@ const Index = () => {
         </section>
 
         <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <div className="relative bg-gradient-to-br from-primary/10 via-card to-secondary/50 rounded-lg overflow-hidden p-6 border border-primary/20 mb-10">
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="bg-primary/20 p-3 rounded-lg">
+                  <Icon name="Award" size={32} className="text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">О бренде HEISENBERG</h2>
+                  <p className="text-xs text-primary uppercase tracking-wider font-bold">История качества</p>
+                </div>
+              </div>
+              <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="text-primary font-bold">HEISENBERG</span> — это не просто вейпшоп. Это философия безупречного качества и внимания к деталям, вдохновлённая культовым сериалом.
+                </p>
+                <p>
+                  Мы начали в 2018 году с одного магазина в центре Калининграда. Наша миссия была проста: предлагать только <span className="text-foreground font-bold">99.1% качественную продукцию</span>, где каждый товар проверен и сертифицирован.
+                </p>
+                <p>
+                  Сегодня HEISENBERG — это сеть из <span className="text-foreground font-bold">десятков точек</span> по всему городу, тысячи довольных клиентов и репутация лучшего вейпшопа Калининграда. Мы работаем только с проверенными брендами и первыми привозим новинки индустрии.
+                </p>
+                <div className="flex gap-2 pt-2">
+                  <div className="bg-primary/20 px-3 py-2 rounded text-primary font-bold text-xs">
+                    С 2018 года
+                  </div>
+                  <div className="bg-primary/20 px-3 py-2 rounded text-primary font-bold text-xs">
+                    10+ магазинов
+                  </div>
+                  <div className="bg-primary/20 px-3 py-2 rounded text-primary font-bold text-xs">
+                    5000+ клиентов
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-2 right-4 text-8xl font-bold text-primary/5 select-none animate-pulse-slow">
+              H
+            </div>
+            <div className="absolute top-2 left-1/2 text-5xl font-bold text-primary/5 select-none animate-float">
+              Br
+            </div>
+          </div>
+
           <h2 className="text-2xl font-bold mb-4 text-foreground">Широкий ассортимент</h2>
           <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
             От POD-систем и кальянов до премиальных жидкостей и аксессуаров — всё в одном месте. Только проверенные бренды и новинки.
