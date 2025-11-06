@@ -242,11 +242,11 @@ const Index = () => {
           </p>
           <div className="space-y-3 mb-5">
             {blogPosts.map((post, idx) => (
-              <Card
-                key={idx}
-                className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer group animate-scale-in"
-                style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
-              >
+              <Link key={idx} to="/blog">
+                <Card
+                  className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer group animate-scale-in"
+                  style={{ animationDelay: `${0.5 + idx * 0.1}s` }}
+                >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -258,12 +258,15 @@ const Index = () => {
                   <Icon name="ArrowRight" size={20} className="text-primary transition-transform group-hover:translate-x-2" />
                 </div>
               </Card>
+              </Link>
             ))}
           </div>
-          <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
-            Читать все статьи
-            <Icon name="BookOpen" size={16} className="ml-2" />
-          </Button>
+          <Link to="/blog">
+            <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold transition-transform hover:scale-105">
+              Читать все статьи
+              <Icon name="BookOpen" size={16} className="ml-2" />
+            </Button>
+          </Link>
         </section>
 
         <section className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
