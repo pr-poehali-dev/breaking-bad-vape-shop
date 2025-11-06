@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Logo from '@/components/Logo';
 import { Card } from '@/components/ui/card';
@@ -129,11 +130,11 @@ const Catalog = () => {
 
         <div className="grid grid-cols-2 gap-3">
           {filteredProducts.map((product) => (
-            <Card
-              key={product.id}
-              className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 group cursor-pointer animate-scale-in card"
-              style={{ animationDelay: `${product.id * 0.05}s` }}
-            >
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <Card
+                className="bg-card border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 group cursor-pointer animate-scale-in card"
+                style={{ animationDelay: `${product.id * 0.05}s` }}
+              >
               <div className="relative">
                 {product.badge && (
                   <div className="absolute top-2 left-2 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold z-10">
@@ -167,6 +168,7 @@ const Catalog = () => {
                 </div>
               </div>
             </Card>
+            </Link>
           ))}
         </div>
       </main>
