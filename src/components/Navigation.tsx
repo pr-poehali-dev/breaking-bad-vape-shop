@@ -8,7 +8,8 @@ const Navigation = () => {
     { path: '/', label: 'Главная', icon: 'Home' },
     { path: '/catalog', label: 'Каталог', icon: 'ShoppingBag' },
     { path: '/blog', label: 'Блог', icon: 'BookOpen' },
-    { path: '/contacts', label: 'Контакты', icon: 'MapPin' }
+    { path: '/contacts', label: 'Контакты', icon: 'MapPin' },
+    { path: '/careers', label: 'Карьера', icon: 'Briefcase' }
   ];
 
   return (
