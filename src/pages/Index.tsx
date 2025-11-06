@@ -4,8 +4,11 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
+import { useCart } from '@/contexts/CartContext';
 
 const Index = () => {
+  const { totalItems } = useCart();
+  
   const categories = [
     { icon: 'Cigarette', name: 'POD-системы' },
     { icon: 'Droplet', name: 'Жидкости' },
@@ -38,12 +41,16 @@ const Index = () => {
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Калининград</p>
               </div>
             </Link>
-            <Button variant="ghost" size="icon" className="relative">
-              <Icon name="ShoppingCart" size={20} />
-              <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                0
-              </span>
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="icon" className="relative">
+                <Icon name="ShoppingCart" size={20} />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                    {totalItems}
+                  </span>
+                )}
+              </Button>
+            </Link>
           </div>
         </div>
       </header>

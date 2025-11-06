@@ -3,10 +3,13 @@ import Icon from '@/components/ui/icon';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
+import { useCart } from '@/contexts/CartContext';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 const Product = () => {
   const { id } = useParams();
+  const { addItem } = useCart();
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
@@ -254,7 +257,21 @@ const Product = () => {
               <Icon name="Plus" size={16} />
             </button>
           </div>
-          <Button className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 font-bold glow-button">
+          <Button 
+            className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 font-bold glow-button"
+            onClick={() => {
+              for (let i = 0; i < quantity; i++) {
+                addItem({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  image: product.images[0]
+                });
+              }
+              toast.success(`${product.name} добавлен в корзину (${quantity} шт.)`);
+              setQuantity(1);
+            }}
+          >
             <Icon name="ShoppingCart" size={18} className="mr-2" />
             Добавить за {product.price * quantity} ₽
           </Button>
