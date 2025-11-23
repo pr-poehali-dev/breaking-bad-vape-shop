@@ -249,24 +249,14 @@ const Contacts = () => {
                           {store.hours}
                         </div>
                       </div>
-                      <div className="flex gap-2 mt-3">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="flex-1 h-8 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground text-xs font-medium"
-                        >
-                          <Icon name="Navigation" size={12} />
-                        </Button>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="flex-1 h-8 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground text-xs font-medium"
-                          onClick={() => window.location.href = `tel:${store.phone.replace(/\D/g, '')}`}
-                        >
-                          <Icon name="Phone" size={12} className="mr-1" />
-                          {store.phone}
-                        </Button>
-                      </div>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="w-full h-8 mt-3 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground text-xs font-medium"
+                      >
+                        <Icon name="Navigation" size={12} className="mr-1" />
+                        Построить маршрут
+                      </Button>
                     </Card>
                   ))}
                 </div>
