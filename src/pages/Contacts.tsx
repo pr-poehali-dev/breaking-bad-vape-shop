@@ -233,7 +233,7 @@ const Contacts = () => {
                 </div>
                 <div className="space-y-2">
                   {districtStores.map((store) => (
-                    <Card key={store.id} className="bg-card border-border p-3 hover:border-primary/50 transition-all duration-300 group card">
+                    <Card key={store.id} id={`store-${store.id}`} className="bg-card border-border p-3 hover:border-primary/50 transition-all duration-300 group card scroll-mt-24">
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="flex-1 min-w-0">
                           <h3 className="font-bold text-foreground text-sm mb-1 flex items-center gap-2">

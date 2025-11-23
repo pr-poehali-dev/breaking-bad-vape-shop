@@ -98,4 +98,8 @@
       0 0 10px hsl(54 100% 62% / 0.15),
       0 0 18px hsl(54 100% 62% / 0.08) !important;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
 import { useCart } from '@/contexts/CartContext';
+import KaliningradMap from '@/components/KaliningradMap';
 
 const Index = () => {
   const { totalItems } = useCart();
@@ -193,6 +194,10 @@ const Index = () => {
         </section>
 
         <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <KaliningradMap />
+        </section>
+
+        <section className="mb-10 animate-fade-in" style={{ animationDelay: '0.35s' }}>
           <h2 className="text-2xl font-bold mb-4 text-foreground">Почему HEISENBERG</h2>
           <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
             Мы объединяем опыт, качество и сервис. Покупая у нас, вы получаете не только товар, но и уверенность в его оригинальности.
@@ -202,7 +207,7 @@ const Index = () => {
               <Card
                 key={idx}
                 className="bg-card border-border p-4 hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-scale-in group"
-                style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
+                style={{ animationDelay: `${0.35 + idx * 0.1}s` }}
               >
                 <div className="flex items-start gap-3">
                   <div className="bg-primary/10 p-3 rounded transition-transform group-hover:scale-110 group-hover:rotate-6">
